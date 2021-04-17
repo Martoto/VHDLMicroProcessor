@@ -14,21 +14,21 @@ architecture a_registers_tb of registers_tb is
             read_reg0 : in unsigned(2 downto 0);
             read_reg1 : in unsigned(2 downto 0);
             write_reg : in unsigned(2 downto 0);
-            data_in : in unsigned(15 downto 0);
-            read_data0 : out unsigned(15 downto 0);
-            read_data1 : out unsigned(15 downto 0)
+            dt_in : in unsigned(15 downto 0);
+            read_dt0 : out unsigned(15 downto 0);
+            read_dt1 : out unsigned(15 downto 0)
         );
     end component;
     signal clk, rst, wr_en : std_logic := '0';
     signal read_reg0, read_reg1, write_reg:
         unsigned(2 downto 0) := "000";
-    signal data_in, read_data0, read_data1:
+    signal dt_in, read_dt0, read_dt1:
         unsigned(15 downto 0) := "0000000000000000";
 begin
     uut : registers port map (
         clk, rst, wr_en, 
         read_reg0, read_reg1, write_reg, 
-        data_in, read_data0, read_data1
+        dt_in, read_dt0, read_dt1
     );
     process
     begin
@@ -75,32 +75,32 @@ begin
         read_reg0 <= "000";
         read_reg1 <= "000";
         write_reg <= "000";
-        data_in <= "0000000000000001";
+        dt_in <= "0000000000000001";
         wait for 100 ns;
         write_reg <= "001";
-        data_in <= "0000000000000010";
+        dt_in <= "0000000000000010";
         wait for 100 ns;
         write_reg <= "010";
-        data_in <= "0000000000000011";
+        dt_in <= "0000000000000011";
         wait for 100 ns;
         write_reg <= "011";
-        data_in <= "0000000000000100";
+        dt_in <= "0000000000000100";
         wait for 100 ns;
         write_reg <= "100";
-        data_in <= "0000000000000101";
+        dt_in <= "0000000000000101";
         wait for 100 ns;
         write_reg <= "101";
-        data_in <= "0000000000000110";
+        dt_in <= "0000000000000110";
         wait for 100 ns;
         write_reg <= "110";
-        data_in <= "0000000000000111";
+        dt_in <= "0000000000000111";
         wait for 100 ns;
         write_reg <= "111";
-        data_in <= "0000000000001000";
+        dt_in <= "0000000000001000";
         wait for 100 ns;
 
         write_reg <= "000";
-        data_in <= "0000000000000000";
+        dt_in <= "0000000000000000";
         wr_en <= '0';
         read_reg0 <= "000";
         read_reg1 <= "000";

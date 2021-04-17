@@ -1,13 +1,40 @@
 v 4
-file . "ula.vhd" "257ed9e8b952dc00716f837d817ac26ba2ae36e8" "20210409143143.255":
-  entity ula at 1( 0) + 0 on 15;
-  architecture a_ula of ula at 14( 264) + 4 on 16;
-file . "ula_tb.vhd" "2a8f6864d8e94cd3ff891ac1e176e4ed4cf3f6aa" "20210409143143.256":
-  entity ula_tb at 1( 0) + 0 on 17;
-  architecture a_ula_tb of ula_tb at 9( 102) + 0 on 18;
-file . "regTopLevel.vhd" "c363cc8eff62f6a6dc5d073a95f3fe36da093ead" "20210412234220.045":
-  entity regtoplevel at 1( 0) + 0 on 25;
-  architecture a_regtoplevel of regtoplevel at 26( 622) + 0 on 26;
-file . "regTopLevel_tb.vhd" "47de737777c4496cfec4fc7daa85b44cbeb41bb2" "20210413022333.422":
-  entity regtoplevel_tb at 1( 0) + 0 on 33;
-  architecture a_regtoplevel_tb of regtoplevel_tb at 8( 108) + 0 on 34;
+file . "cu_toplvl_tb.vhd" "53dffa4333e0d88cb326d47c395a990d16b55fe9" "20210417235148.495":
+  entity cu_toplvl_tb at 1( 0) + 0 on 89;
+  architecture a_cu_toplvl_tb of cu_toplvl_tb at 8( 106) + 0 on 90;
+file . "cu_toplvl.vhd" "f42ac77437b54f1e3590393a821afaabd020b0a9" "20210417235148.497":
+  entity cu_toplvl at 1( 0) + 0 on 91;
+  architecture cu_toplvl_a of cu_toplvl at 11( 160) + 0 on 92;
+file . "cu.vhd" "b31abb6482c214bf50a6b03a69f6ed15f1851535" "20210417235148.498":
+  entity cu at 1( 0) + 0 on 93;
+  architecture cu_a of cu at 20( 409) + 0 on 94;
+file . "pc.vhd" "cff57b0e7dce61728cc64dcb7d92f7388f0badc7" "20210417235148.499":
+  entity pc at 1( 0) + 0 on 95;
+  architecture a_pc of pc at 14( 260) + 0 on 96;
+file . "reg16.vhd" "399490822127b130533914c2c6e6e123dd28662f" "20210417235148.499":
+  entity reg16 at 1( 0) + 0 on 97;
+  architecture a_reg16 of reg16 at 14( 270) + 0 on 98;
+file . "registers_tb.vhd" "11793d4ce79add8cfe03637daa5d35a65e42cc85" "20210417235148.501":
+  entity registers_tb at 1( 0) + 0 on 99;
+  architecture a_registers_tb of registers_tb at 8( 106) + 0 on 100;
+file . "registers.vhd" "aefb03ef60e50fbea9b737e5bba42ade82dd4e4c" "20210417235148.503":
+  entity registers at 1( 0) + 0 on 101;
+  architecture a_registers of registers at 24( 566) + 0 on 102;
+file . "regTopLevel_tb.vhd" "47de737777c4496cfec4fc7daa85b44cbeb41bb2" "20210417235148.504":
+  entity regtoplevel_tb at 1( 0) + 0 on 103;
+  architecture a_regtoplevel_tb of regtoplevel_tb at 8( 108) + 0 on 104;
+file . "regTopLevel.vhd" "7e10b50d3d1cc56ebed876fc6cf4b56837652629" "20210417235148.505":
+  entity regtoplevel at 1( 0) + 0 on 105;
+  architecture a_regtoplevel of regtoplevel at 26( 620) + 0 on 106;
+file . "rom.vhd" "97df879d3f1a3addd2bcb5afa5b83ecb66853053" "20210417235148.506":
+  entity rom at 1( 0) + 0 on 107;
+  architecture a_rom of rom at 12( 246) + 0 on 108;
+file . "stt_machine.vhd" "5914b7fbea327bfb751ed7533b5d790efa488f14" "20210417235148.507":
+  entity sttmchne at 1( 0) + 0 on 109;
+  architecture a_sttmchne of sttmchne at 13( 218) + 0 on 110;
+file . "ula_tb.vhd" "2a8f6864d8e94cd3ff891ac1e176e4ed4cf3f6aa" "20210417235148.508":
+  entity ula_tb at 1( 0) + 0 on 111;
+  architecture a_ula_tb of ula_tb at 9( 102) + 0 on 112;
+file . "ula.vhd" "257ed9e8b952dc00716f837d817ac26ba2ae36e8" "20210417235148.509":
+  entity ula at 1( 0) + 0 on 113;
+  architecture a_ula of ula at 14( 264) + 4 on 114;

@@ -13,9 +13,9 @@ entity registers is
         rd0 : in unsigned(2 downto 0);
         rd1 : in unsigned(2 downto 0);
         wr : in unsigned(2 downto 0);
-        -- data input
-        data_in : in unsigned(15 downto 0);
-        -- data output
+        -- dt input
+        dt_in : in unsigned(15 downto 0);
+        -- dt output
         dt_out0 : out unsigned(15 downto 0);
         dt_out1 : out unsigned(15 downto 0)
     );
@@ -28,21 +28,21 @@ architecture a_registers of registers is
             clk : in std_logic;
             rst : in std_logic;
             wr_en : in std_logic;
-            data_in : in unsigned(15 downto 0);
-            data_out : out unsigned(15 downto 0)
+            dt_in : in unsigned(15 downto 0);
+            dt_out : out unsigned(15 downto 0)
         );
     end component;
    
     -- signals
     signal wr_enablers : unsigned(7 downto 0) := "00000000";
-    signal reg_data0 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data1 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data2 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data3 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data4 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data5 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data6 : unsigned(15 downto 0) := "0000000000000000";
-    signal reg_data7 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt0 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt1 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt2 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt3 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt4 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt5 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt6 : unsigned(15 downto 0) := "0000000000000000";
+    signal reg_dt7 : unsigned(15 downto 0) := "0000000000000000";
 begin
 
     wr_enablers <= "00000010" when wr = "001" else
@@ -55,80 +55,80 @@ begin
     
     -- connects registers 
     reg0 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => '0',
         clk => clk,
         rst => rst,
-        data_out => reg_data0
+        dt_out => reg_dt0
     );
     reg1 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(1),
         clk => clk,
         rst => rst,
-        data_out => reg_data1
+        dt_out => reg_dt1
     );
     reg2 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(2),
         clk => clk,
         rst => rst,
-        data_out => reg_data2
+        dt_out => reg_dt2
     );
     reg3 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(3),
         clk => clk,
         rst => rst,
-        data_out => reg_data3
+        dt_out => reg_dt3
     );
     reg4 : reg16 port map (
-        data_in => data_in, 
+        dt_in => dt_in, 
         wr_en => wr_enablers(4),
         clk => clk,
         rst => rst,
-        data_out => reg_data4
+        dt_out => reg_dt4
     );
     reg5 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(5),
         clk => clk,
         rst => rst,
-        data_out => reg_data5
+        dt_out => reg_dt5
     );
     reg6 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(6),
         clk => clk,
         rst => rst,
-        data_out => reg_data6
+        dt_out => reg_dt6
     );
     reg7 : reg16 port map (
-        data_in => data_in,
+        dt_in => dt_in,
         wr_en => wr_enablers(7),
         clk => clk,
         rst => rst,
-        data_out => reg_data7
+        dt_out => reg_dt7
     );
 
-    dt_out0   <= reg_data0  when rd0 = "000" else
-                 reg_data1  when rd0 = "001" else
-                 reg_data2  when rd0 = "010" else
-                 reg_data3  when rd0 = "011" else
-                 reg_data4  when rd0 = "100" else
-                 reg_data5  when rd0 = "101" else
-                 reg_data6  when rd0 = "110" else
-                 reg_data7  when rd0 = "111" else
+    dt_out0   <= reg_dt0  when rd0 = "000" else
+                 reg_dt1  when rd0 = "001" else
+                 reg_dt2  when rd0 = "010" else
+                 reg_dt3  when rd0 = "011" else
+                 reg_dt4  when rd0 = "100" else
+                 reg_dt5  when rd0 = "101" else
+                 reg_dt6  when rd0 = "110" else
+                 reg_dt7  when rd0 = "111" else
                  "0000000000000000";
 
-    dt_out1   <= reg_data0  when rd1 = "000" else
-                 reg_data1  when rd1 = "001" else
-                 reg_data2  when rd1 = "010" else
-                 reg_data3  when rd1 = "011" else
-                 reg_data4  when rd1 = "100" else
-                 reg_data5  when rd1 = "101" else
-                 reg_data6  when rd1 = "110" else
-                 reg_data7  when rd1 = "111" else
+    dt_out1   <= reg_dt0  when rd1 = "000" else
+                 reg_dt1  when rd1 = "001" else
+                 reg_dt2  when rd1 = "010" else
+                 reg_dt3  when rd1 = "011" else
+                 reg_dt4  when rd1 = "100" else
+                 reg_dt5  when rd1 = "101" else
+                 reg_dt6  when rd1 = "110" else
+                 reg_dt7  when rd1 = "111" else
                  "0000000000000000";
 
 end architecture;
