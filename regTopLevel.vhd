@@ -18,8 +18,10 @@ entity regTopLevel is
         -- data input
         dt_in : in unsigned(15 downto 0);
         -- data output
-        dt_out : out unsigned(15 downto 0)
-    );
+        dt_out0 : out unsigned(15 downto 0);
+        dt_out1 : out unsigned(15 downto 0);
+        ula_out:  out unsigned(15 downto 0)    
+        );
 end regTopLevel;
 
 
@@ -38,8 +40,9 @@ architecture a_regTopLevel of regTopLevel is
         dt_in : in unsigned(15 downto 0);
         -- data output
         dt_out0 : out unsigned(15 downto 0);
-        dt_out1 : out unsigned(15 downto 0)
-    );
+        dt_out1 : out unsigned(15 downto 0);
+        ula_out:  out unsigned(15 downto 0)
+        );
     end component;
     
     component ula is 
@@ -77,7 +80,7 @@ architecture a_regTopLevel of regTopLevel is
         a => reg_data0,
         b => ula_mux,
         op => op,    
-        ula_out => dt_out
+        ula_out => ula_out
     );
 
 end a_regTopLevel;
