@@ -28,20 +28,19 @@ end regTopLevel;
 architecture a_regTopLevel of regTopLevel is
     component registers is
         port (
-        -- control
-        clk : in std_logic;
-        rst : in std_logic;
-        wr_en : in std_logic;
-        -- address selection
-        rd0 : in unsigned(2 downto 0);
-        rd1 : in unsigned(2 downto 0);
-        wr : in unsigned(2 downto 0);
-        -- data input
-        dt_in : in unsigned(15 downto 0);
-        -- data output
-        dt_out0 : out unsigned(15 downto 0);
-        dt_out1 : out unsigned(15 downto 0);
-        ula_out:  out unsigned(15 downto 0)
+         -- control
+         clk : in std_logic;
+         rst : in std_logic;
+         wr_en : in std_logic;
+         -- address selection
+         rd0 : in unsigned(2 downto 0);
+         rd1 : in unsigned(2 downto 0);
+         wr : in unsigned(2 downto 0);
+         -- dt input
+         dt_in : in unsigned(15 downto 0);
+         -- dt output
+         dt_out0 : out unsigned(15 downto 0);
+         dt_out1 : out unsigned(15 downto 0)
         );
     end component;
     
